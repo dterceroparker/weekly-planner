@@ -1,10 +1,12 @@
 // import npm packages
+import 'dotenv/config.js'
 import express from 'express'
 import { weeklyPlanner } from './data/weekly-planner.js'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import createError from 'http-errors'
 import logger from 'morgan'
+import './config/database.js'
 
 // import routers
 import { router as indexRouter } from './routes/index.js'
