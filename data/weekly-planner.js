@@ -5,3 +5,7 @@ const weeklyPlanner = [
   {day: "Thursday", item: "Meditate", urgency: "medium-priority", completed: false},
   {day: "Friday", item: "Cook", urgency: "medium-priority", completed: false},
 ]
+
+export {
+  weeklyPlanner
+}
