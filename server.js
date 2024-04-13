@@ -10,7 +10,7 @@ import './config/database.js'
 
 // import routers
 import { router as indexRouter } from './routes/index.js'
-import { router as tasksRouter } from './routes/tasks.js'
+import { router as daysRouter } from './routes/days.js'
 
 // create the express app
 const app = express()
@@ -30,7 +30,7 @@ app.use(
 
 // mount imported routes
 app.use('/', indexRouter)
-app.use('/tasks', tasksRouter)
+app.use('/days', daysRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

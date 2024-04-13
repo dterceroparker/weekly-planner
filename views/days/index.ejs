@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <nav>
+    <div class="title-container">Weekly Planner</div>
+    <div class="link-container">
+      <a href="/days">Daily Plan</a>
+      <a href="/days/new">Add a Task</a>
+    </div>
+  </nav>
+  <h1>Daily Tasks as of <%= date %></h1>
+  <select name="type" id="type">
+    <option value="Monday">Monday</div>
+    <option value="Tuesday">Tuesday</option>
+    <option value="Wednesday">Wednesday</option>
+    <option value="Thursday">Thursday</option>
+    <option value="Friday">Friday</option>
+    <option value="Saturday">Saturday</option>
+    <option value="Sunday">Sunday</option>
+  </select>
+  <ul>
+    <% tasks.forEach(task => { %>
+      <li>
+        <form 
+          action="/days/<%= task._id %>?_method=DELETE"
+          method="POST"
+          class="delete-form"
+        >
+          <button class="delete-button" type="submit">X</button>
+        </form>
+        <a href="/days/<%= task._id %>/edit"><button class="edit-button">✏️</button></a>
+        <a href="/days/<%= task._id %>"><%= task.text %></a> 
+        - 
+        <%= task.completion ? 'done' : 'not done' %>
+      </li>
+    <% }) %>
+  </ul>
+  <a href="/days/new">Add To-Do</a><br>
+  <a href="/">Back</a>
+  </ul>
+</body>
