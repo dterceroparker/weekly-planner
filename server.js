@@ -1,7 +1,7 @@
 // import npm packages
 import 'dotenv/config.js'
 import express from 'express'
-import { weeklyPlanner } from './data/weekly-planner.js'
+import { weeklyPlanner } from './data/task-planner.js'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import createError from 'http-errors'
@@ -10,7 +10,7 @@ import './config/database.js'
 
 // import routers
 import { router as indexRouter } from './routes/index.js'
-import { router as daysRouter } from './routes/days.js'
+import { router as tasksRouter } from './routes/tasks.js'
 
 // create the express app
 const app = express()
@@ -30,7 +30,7 @@ app.use(
 
 // mount imported routes
 app.use('/', indexRouter)
-app.use('/days', daysRouter)
+app.use('/tasks', tasksRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

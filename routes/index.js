@@ -4,7 +4,7 @@ const router = Router()
 
 // GET localhost:3000/
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Weekly Planner' })
+  res.render('index', { title: 'Task Planner' })
 })
 
 export { router }
