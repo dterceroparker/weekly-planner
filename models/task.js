@@ -3,8 +3,8 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const taskSchema = new Schema({
-  day: {type: String, enum: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']},
-  task: String,
+  date: Date,
+  detail: String,
   type: {type: String, enum: ['Low-priority', 'Medium-priority', 'High-priority']},
   completion: Boolean,
 }, {
