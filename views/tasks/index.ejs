@@ -15,33 +15,21 @@
     </div>
   </nav>
   <h1>Tasks as of <%= date %></h1>
-  <select name="type" id="type">
-    <option value="Monday">Monday</div>
-    <option value="Tuesday">Tuesday</option>
-    <option value="Wednesday">Wednesday</option>
-    <option value="Thursday">Thursday</option>
-    <option value="Friday">Friday</option>
-    <option value="Saturday">Saturday</option>
-    <option value="Sunday">Sunday</option>
-  </select>
-  <ul>
+  <ul class="task-container">
     <% tasks.forEach(task => { %>
       <li>
         <form 
-          action="/days/<%= task._id %>?_method=DELETE"
+          action="/tasks/<%= task._id %>?_method=DELETE"
           method="POST"
-          class="delete-form"
-        >
+          class="delete-form">
+          <h3><%= task.date %></h3>
           <button class="delete-button" type="submit">X</button>
         </form>
-        <a href="/days/<%= task._id %>/edit"><button class="edit-button">✏️</button></a>
-        <a href="/days/<%= task._id %>"><%= task.text %></a> 
-        - 
-        <%= task.completion ? 'done' : 'not done' %>
-      </li>
+      <a href="/tasks/<%= task._id %>/edit"><button class="edit-button"></button></a>
+      <a href="/tasks/<%= task._id %>"><% task.text %></a>
+      -
     <% }) %>
   </ul>
-  <a href="/days/new">Add To-Do</a><br>
-  <a href="/">Back</a>
-  </ul>
+  <a href="/tasks/new">Add Task</a><br>
+  <a href="/">Return</a>
 </body>

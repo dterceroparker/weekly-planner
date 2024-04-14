@@ -9,4 +9,7 @@ router.get('/new', tasksCtrl.new)
 //GET localhost:3000/tasks
 router.get('/', tasksCtrl.index)
 
+//GET localhost:3000/tasks/:taskId
+router.get('/:taskId', tasksCtrl.show)
+
 export { router }

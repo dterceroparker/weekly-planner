@@ -18,8 +18,21 @@ function index(req, res) {
   })
 }
 
+function show(req, res) {
+  Task.findById(req.params.taskId)
+  .then(task => {
+    res.render('tasks/show', {
+      task: task
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/todos')
+  })
+}
 
 export {
   newTask as new,
   index,
+  show,
 }
