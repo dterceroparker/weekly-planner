@@ -14,8 +14,8 @@
       <a href="/tasks/new">Add a Task</a>
     </div>
   </nav>
-  <div class="details-container">
-    <a href="/tasks/"><h2>Edit Task: <%= task.detail %></h2></a>
+  <div class="task-container">
+    <h2>Edit Task: <a href="/tasks/"><%= task.detail %></a></h2> 
     <p>Date: <%= task.date %></p>
     <p>Urgency: <%= task.type %></p>
     <p>Completion: <%= task.completion ? 'Yes' : 'No' %></p>

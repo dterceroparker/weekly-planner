@@ -18,8 +18,10 @@ router.get('/:taskId/edit', tasksCtrl.edit)
 //POST localhost:3000/tasks
 router.post('/', tasksCtrl.create)
 
-
 //DELETE localhost:3000/tasks/:taskId
 router.delete('/:taskId', tasksCtrl.delete)
+
+//PUT localhost:3000/tasks/:taskId
+router.put('/:taskId', tasksCtrl.update)
 
 export { router }

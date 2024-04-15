@@ -2,13 +2,37 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: rgba(0, 0, 0, 0.43);
+  background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)), url(https://images.pexels.com/photos/1558691/pexels-photo-1558691.jpeg?cs=srgb&dl=pexels-jess-bailey-designs-1558691.jpg&fm=jpg);
+  width: 100%;
+  height: 100vh;
+  background-position: center, center;
+  background-size: cover;
 }
 
 a {
-  color: #3c00ff;
+  color: #240dee;
+  text-decoration: none;
 }
 
 li {
   list-style: none;
   margin: 4px 0px;
+}
+
+nav {
+  width: 100%;
+  text-align: cleft;
+}
+
+.task-container {
+  text-align: center;
+  margin-left: -9px; 
+  margin-top: 100px;
+  margin-bottom: 20px; 
+  -webkit-box-shadow: inset 0px -15px 10px 0px rgba(70, 66, 66, 0.687);
+  -moz-box-shadow: inset 0px -15px 10px 0px rgb(78, 65, 65);
+  box-shadow: inset 0px -15px 10px 0px rgb(65, 60, 60);
+  height: 100vh;
+  width: 900px;
+  z-index: 100;
 }

@@ -11,9 +11,9 @@
     <h1>Task Planner</h1>
   </header>
   <main>
-    <div>
+    <div class="task-container">
       <h2>Edit Task</h2>
-      <form action="/tasks" method="POST" autocomplete="off">
+      <form action="/tasks/<%= task._id %>?_method=PUT" method="POST" autocomplete="off">
         <input type="date" name="date">
         <input type="text" name="detail" value="<%= task.detail %>">
         <input type="checkbox" name="done" <%= task.completion ? 'checked' : '' %>>
@@ -22,7 +22,7 @@
           <option value="Intermediate-priority">"Intermediate-Priority"</option>
           <option value="High-priority">"High-Priority"</option>
         </select>
-        <button type="submit">Add Task</button>
+        <button type="submit">Update Task</button>
       </form>
     </div>
   </main>

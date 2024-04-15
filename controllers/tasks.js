@@ -60,7 +60,7 @@ function edit(req, res) {
   //find task and pass it to the render
   Task.findById(req.params.taskId)
   .then(task => {
-  //render a view with a form (edit.ejs)
+    //render a view with a form (edit.ejs)
     res.render('tasks/edit', {
       task: task
     })
@@ -71,11 +71,23 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  //handle checkbox logic
+  req.body.done = !!req.body.done
+  //find task by ID and update
+  Task.findByIdAndUpdate(req.params.taskId, req.body, {new:true})
+  .then(task => {
+    //redirect back to show view
+    res.redirect(`/tasks/${req.params.taskId}`)
+  })
+}
+
 export {
   newTask as new,
   create,
   show,
   index,
   deleteTask as delete,
-  edit
+  edit,
+  update
 }
